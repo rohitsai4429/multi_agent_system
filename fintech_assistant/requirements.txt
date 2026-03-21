@@ -1,0 +1,14 @@
+fastapi
+pandas
+numpy
+scikit-learn
+uvicorn
+pydantic
+joblib
+yfinance
+matplotlib
+google-generativeai
+groq
+transformers
+torch
+requests
