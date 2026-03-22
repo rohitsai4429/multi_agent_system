@@ -257,47 +257,6 @@ const Dashboard = ({ userData, updateUserData, setCurrentPage }) => {
         </div>
       )}
 
-      {/* Quick Actions */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-semibold text-gray-700 mb-4">Quick Actions</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <button 
-            onClick={() => { 
-              const newIncome = prompt('Enter monthly income in ₹', userData.income); 
-              if(newIncome && !isNaN(newIncome)) updateUserData({income: parseFloat(newIncome)}); 
-            }}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-          >
-            Update Income
-          </button>
-          <button 
-            onClick={() => { 
-              const category = prompt('Expense category (e.g., rent, food)'); 
-              const amount = prompt('Amount in ₹'); 
-              if(category && amount && !isNaN(amount)) { 
-                const newExpenses = {...userData.expenses}; 
-                newExpenses[category] = (newExpenses[category] || 0) + parseFloat(amount); 
-                updateUserData({expenses: newExpenses}); 
-              } 
-            }}
-            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
-          >
-            Add Expense
-          </button>
-          <button 
-            onClick={() => setCurrentPage('goal-planning')}
-            className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
-          >
-            Set Goal
-          </button>
-          <button 
-            onClick={() => setCurrentPage('budget-generator')}
-            className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700"
-          >
-            View Budget
-          </button>
-        </div>
-      </div>
     </div>
   );
 };
